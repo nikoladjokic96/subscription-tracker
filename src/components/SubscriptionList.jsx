@@ -3,6 +3,50 @@ import { GoSearch } from 'react-icons/go'
 import { IoIosArrowDown } from 'react-icons/io'
 import Data from '../data.json'
 import { AiOutlinePlus } from 'react-icons/ai'
+import Box from '@mui/material/Box'
+import TextField from '@mui/material/TextField'
+import MenuItem from '@mui/material/MenuItem'
+import { styled } from '@mui/material/styles'
+const CssTextField = styled(TextField)({
+  '& .MuiSvgIcon-root': { color: 'whitesmoke' },
+  '& .MuiInputBase-input': { color: 'whitesmoke' },
+  label: { color: 'whitesmoke' },
+  '& label.Mui-focused': {
+    color: 'whitesmoke',
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: 'whitesmoke',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: 'whitesmoke',
+    },
+    '&:hover fieldset': {
+      borderColor: 'whitesmoke',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: 'whitesmoke',
+    },
+  },
+})
+const currencies = [
+  {
+    value: 'USD',
+    label: '$',
+  },
+  {
+    value: 'EUR',
+    label: '€',
+  },
+  {
+    value: 'RSD',
+    label: 'РСД',
+  },
+  {
+    value: 'JPY',
+    label: '¥',
+  },
+]
 const SubscriptionInfo = ({ sub }) => {
   return (
     <div className="list-container">
@@ -14,11 +58,53 @@ const SubscriptionInfo = ({ sub }) => {
           }}
         />
         <h2>New Subscription</h2>
-        
         <h3>Add</h3>
       </div>
-      <div className="newsub-container">
-        <div>{sub.name}</div>
+      <div
+        className="newsub-container"
+        style={{ backgroundColor: `${sub.color}` }}
+      >
+        <div className="sub-pricing">
+          <img src={sub.logo} alt="logo" className="price-img"></img>
+          <Box
+            component="form"
+            sx={{
+              '& .MuiTextField-root': { m: 1, width: '100px' },
+            }}
+            noValidate
+            autoComplete="off"
+          >
+            <div>
+              <CssTextField
+                id="outlined-select-currency"
+                select
+                label="Select"
+                defaultValue="EUR"
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </CssTextField>
+            </div>
+          </Box>
+          <Box
+            component="form"
+            sx={{
+              '& > :not(style)': { m: 1, width: '25ch' },
+            }}
+            noValidate
+            autoComplete="off"
+          >
+            <CssTextField
+              id="outlined-basic"
+              label="Price"
+              type="number"
+              variant="outlined"
+            />
+          </Box>
+        </div>
       </div>
     </div>
   )
