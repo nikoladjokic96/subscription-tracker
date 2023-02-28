@@ -1,0 +1,39 @@
+[
+  {
+    "id": "1",
+    "name": "Amazon",
+    "color": "darkgoldenrod",
+    "logo": "/images/amazon.png"
+  },
+  {
+    "id": "2",
+    "name": "American Express",
+    "color": "MediumPurple",
+    "logo": "/images/american.png"
+  },
+  {
+    "id": "3",
+    "name": "Apple Music",
+    "color": "black",
+    "logo": "/images/apple.png"
+  },
+  {
+    "id": "5",
+    "name": "Bank od America",
+    "color": "blue",
+    "logo": "/images/bank.png"
+  },
+  {
+    "id": "6",
+    "name": "Netflix",
+    "color": "red",
+    "logo": "/images/netflix.png"
+  },
+  {
+    "id": "7",
+    "name": "Playstation Plus",
+    "color": "CornflowerBlue",
+    "logo": "/images/pplus.png"
+  },
+  { "id": "8", "name": "HBO", "color": "black", "logo": "/images/hbo.png" }
+]
