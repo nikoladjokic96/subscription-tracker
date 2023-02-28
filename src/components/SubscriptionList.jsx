@@ -14,6 +14,7 @@ const SubscriptionInfo = ({ sub }) => {
           }}
         />
         <h2>New Subscription</h2>
+        
         <h3>Add</h3>
       </div>
       <div className="newsub-container">
